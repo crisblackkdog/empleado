@@ -1,0 +1,58 @@
+{% extends 'includes/base.html' %}
+
+
+{% block title %}
+    Editar Empleado
+{% endblock title %}
+
+
+{% block content %}
+    
+{% include 'includes/header.html' %}
+
+<div class="grid-container">
+    <div class="grid-x">
+        <h1 class="cell">
+            Agregar Departamento
+        </h1>
+        <div class="cell">
+            <form class="cell callout grid-x grid-margin-x" method="POST"> {% csrf_token %}
+                <div class="cell grid-container">
+                    <h3>Empleado</h3>
+                    <div class="cell medium-6 ">
+                        <label>Nombres
+                            {{ form.nombre }}
+                        </label>
+                    </div>
+                    <div class="cell medium-6 ">
+                        <label>Apellidos
+                            {{ form.apellido }}
+                        </label>
+                    </div>
+                </div>    
+                <div class="cell grid-container">
+                       
+                    <h3>Departamento</h3>
+                    <div class="cell medium-6 ">
+                        <label>Trabajo
+                            {{ form.departamento }}
+                        </label>
+                    </div>
+                    <div class="cell medium-6 ">
+                        <label>Departamento
+                            {{ form.shortName }}
+                        </label>
+                    </div>
+                </div>
+                <div class="cell  ">
+                    <button class="submit success button">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+{% endblock content %}
+    
+
